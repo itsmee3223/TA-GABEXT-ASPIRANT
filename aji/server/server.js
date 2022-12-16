@@ -6,6 +6,7 @@ const cookieParser = require("cookie-parser");
 
 const adminRouter = require("./routes/adminRouter");
 const productRouter = require("./routes/productRouter");
+const uploadRouter = require("./routes/uploadRouter");
 
 
 const errorMiddleware = require("./middleware/Error");
@@ -32,6 +33,8 @@ app.get("/", (req, res) => {
 
 app.use("/api/admin", adminRouter);
 app.use("/api/products", productRouter);
+app.use("/api/upload", uploadRouter);
+
 
 app.use(errorMiddleware);
 
