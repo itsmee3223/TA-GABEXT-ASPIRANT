@@ -4,8 +4,14 @@ const cors = require("cors");
 
 const cookieParser = require("cookie-parser");
 
+const adminRouter = require("./routes/adminRouter");
+
+const errorMiddleware = require("./middleware/Error");
+const connectToDb = require("./config/db");
+
 const app = express();
 
+connectToDb();
 app.use(
   cors({
     origin: [/netlify\.app$/, /localhost:\d{4}$/],
@@ -20,4 +26,24 @@ app.get("/", (req, res) => {
     success: true,
     message: "API service running 🚀",
   });
+});
+
+app.use("/api/admin", adminRouter);
+
+const server = app.listen(process.env.PORT || 5000, () => {
+  console.log("Server running");
+});
+
+process.on("unhandledRejection", (err) => {
+  console.log(`Error: ${err.message}`);
+  console.log(`Server shutting down due to unhandled promise rejection`);
+  server.close(() => {
+    process.exit(1);
+  });
+});
+
+process.on("uncaughtException", (err) => {
+  console.log(`Error: ${err.message}`);
+  console.log(`Server shutting down due to uncaught exception`);
+  process.exit(1);
 });
