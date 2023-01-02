@@ -13,6 +13,9 @@ import Footer from './Footer/';
 import AmountButtons from './AmountButtons/';
 import Button from './Button/';
 import Loading from './Loading/';
+import Filters from './Filters/';
+import ProductList from './ProductList/';
+import Sort from './Sort/';
 
 export {
   FeaturedProducts,
@@ -29,5 +32,8 @@ export {
   AmountButtons,
   Button,
   Loading,
+  Filters,
+  ProductList,
+  Sort,
   ErrorBoundary,
 };
