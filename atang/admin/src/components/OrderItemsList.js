@@ -38,4 +38,4 @@ function OrderItemsList({ orderItems }) {
   );
 }
 
-export default OrderItem
+export default OrderItemsList;

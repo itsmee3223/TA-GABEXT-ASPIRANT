@@ -5,6 +5,7 @@ import { useProductsContext } from "./context/products_context";
 import "react-toastify/dist/ReactToastify.css";
 import {
   Home,
+  Products,
 } from "./pages";
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
             <Switch>
               <Route exact path="/">
                 <Home />
+              </Route>
+              <Route exact path="/products">
+              <Products />
               </Route>
             </Switch>
             <Footer />

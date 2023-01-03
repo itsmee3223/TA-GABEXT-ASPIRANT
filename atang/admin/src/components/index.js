@@ -6,7 +6,7 @@ import DashboardCards from './DashboardCards';
 import OrdersTable from './OrdersTable';
 import ProductsTable from './ProductsTable';
 import AdminsTable from './AdminsTable';
-import OrderDetails from './OrderDetails';
+import OrderDetails from './OrdersDetails';
 import OrderItemsList from './OrderItemsList';
 import CreateNewAdminModal from './CreateNewAdminModal';
 import CreateNewProductModal from './CreateNewProductModal';
